@@ -3,7 +3,6 @@ import { IUsersRepository, ICreateUserDTO } from "../IUsersRepository";
 
 class UsersRepository implements IUsersRepository {
   private users: User[];
-
   private static INSTANCE: UsersRepository;
 
   private constructor() {
@@ -14,28 +13,38 @@ class UsersRepository implements IUsersRepository {
     if (!UsersRepository.INSTANCE) {
       UsersRepository.INSTANCE = new UsersRepository();
     }
-
     return UsersRepository.INSTANCE;
   }
 
   create({ name, email }: ICreateUserDTO): User {
-    // Complete aqui
+    const user = new User();
+    Object.assign(user, {
+      name,
+      email,
+      admin: false,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    });
+    this.users.push(user);
+    return user;
   }
 
-  findById(id: string): User | undefined {
+  /*findById(id: string): User | undefined {
     // Complete aqui
-  }
+  }*/
 
   findByEmail(email: string): User | undefined {
-    // Complete aqui
+    const user = this.users.find(item => item.email === email);
+    console.log(user);
+    return user;
   }
 
-  turnAdmin(receivedUser: User): User {
+  /*turnAdmin(receivedUser: User): User {
     // Complete aqui
-  }
+  }*/
 
   list(): User[] {
-    // Complete aqui
+    return this.users;
   }
 }
 
