@@ -39,13 +39,7 @@ class UsersRepository implements IUsersRepository {
   }
 
   turnAdmin(receivedUser: User): User {
-    this.users.map((item) => {
-      if (item.id === receivedUser.id) {
-        // eslint-disable-next-line no-param-reassign
-        item.admin = true;
-      }
-      return item;
-    });
+    receivedUser.admin = true;
     return receivedUser;
   }
 
