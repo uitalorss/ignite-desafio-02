@@ -7,7 +7,6 @@ interface IRequest {
 }
 
 class CreateUserUseCase {
-  // eslint-disable-next-line prettier/prettier
   constructor(private usersRepository: IUsersRepository) { }
 
   execute({ email, name }: IRequest): User {
