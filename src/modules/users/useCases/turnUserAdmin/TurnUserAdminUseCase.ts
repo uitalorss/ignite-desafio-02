@@ -10,7 +10,6 @@ class TurnUserAdminUseCase {
 
   execute({ user_id }: IRequest): User {
     const user = this.usersRepository.findById(user_id);
-    console.log("user")
     if (!user) {
       throw new Error("O usuário com esse id não existe")
     }
