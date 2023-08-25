@@ -8,6 +8,7 @@
   "paths": {
     "/users": {
       "post": {
+        "tags": ["Usuários"],
         "summary": "Criação de usuário",
         "description": "Criação de um novo usuário",
         "requestBody": {
@@ -37,6 +38,34 @@
           },
           "500": {
             "description": "Usuário já existe"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Usuários"],
+        "summary": "Listar usuários",
+        "description": "Listagem de todos os usuários cadastrados",
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro do servidor"
           }
         }
       }
