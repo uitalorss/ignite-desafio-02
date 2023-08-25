@@ -4,5 +4,42 @@
     "title": "Documentação Projeto Ignite",
     "description": "Documentação do projeto do módulo 2 do desafio do curso Ignite",
     "version": "1.0.0"
+  },
+  "paths": {
+    "/users": {
+      "post": {
+        "summary": "Criação de usuário",
+        "description": "Criação de um novo usuário",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "João",
+                  "email": "joão@email.com"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Usuário criado com sucesso"
+          },
+          "500": {
+            "description": "Usuário já existe"
+          }
+        }
+      }
+    }
   }
 }
