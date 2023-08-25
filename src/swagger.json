@@ -1,0 +1,8 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Documentação Projeto Ignite",
+    "description": "Documentação do projeto do módulo 2 do desafio do curso Ignite",
+    "version": "1.0.0"
+  }
+}
