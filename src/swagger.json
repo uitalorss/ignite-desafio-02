@@ -107,6 +107,29 @@
           }
         }
       }
+    },
+    "/users/{user_id}/admin":{
+      "patch": {
+        "tags": ["Usuários"],
+        "summary": "Tornar usuário um admin",
+        "description": "Tornar usuário administrador",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "description": "id de usuário"
+          } 
+        ],
+        "responses": {
+          "201": {
+            "description": "Usuário Alterado com sucesso"
+          },
+          "500": {
+            "description": "Usuário não encontrado"
+          }
+        }
+      }
     }
   }
 }
